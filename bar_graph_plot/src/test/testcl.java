@@ -7,7 +7,6 @@ public class testcl {
 		System.out.println("Tested");
 		System.out.println("Tested");
 		
-		System.out.println("Tested");
 
 		
 
