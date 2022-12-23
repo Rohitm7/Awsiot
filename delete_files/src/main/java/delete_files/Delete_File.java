@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Delete_File {
 	public static void Delete_screnshots() {
-		String path = "/Users/aneesh/Desktop/Screenshots";
+		String path = "/Users/testingwimate/Desktop/Automation_Screenshots/";
 		File file = new File(path);
 		File[] files = file.listFiles();
 		for (File f : files) {
