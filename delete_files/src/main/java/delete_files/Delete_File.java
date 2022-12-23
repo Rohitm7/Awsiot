@@ -17,8 +17,4 @@ public class Delete_File {
 		}
 	}
 
-	public static void main(String[] args) {
-		Delete_screnshots();
-	}
-
 }
