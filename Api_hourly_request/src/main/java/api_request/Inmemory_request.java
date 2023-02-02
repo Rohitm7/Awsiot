@@ -45,19 +45,6 @@ public class Inmemory_request {
 				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"MG2GFRP1_schedule_hour\",\"limit\": 1,\"query\": {}}");
 	}
 
-	public static void Postman_Api_Inmem_read_Sche_Day_Collection() throws Exception {
-		String api_Inmem_url = config_read.read_configvalue("e2e_url");
-		String Key = config_read.read_configvalue("key");
-		post(api_Inmem_url, "{\"key\":\"" + Key
-				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"MG2GFRP1_schedule_day\",\"limit\": 1,\"query\": {}}");
-	}
-
-	public static void Postman_Api_Inmem_read_Sche_Month_Collection() throws Exception {
-		String api_Inmem_url = config_read.read_configvalue("e2e_url");
-		String Key = config_read.read_configvalue("key");
-		post(api_Inmem_url, "{\"key\":\"" + Key
-				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"MG2GFRP1_schedule_month\",\"limit\": 1,\"query\": {}}");
-	}
 
 	public static String post(String url, String json) throws Exception {
 		// connection for postman
