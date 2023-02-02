@@ -23,11 +23,11 @@ public class TestClass_API {
 		if (diff < 36) {
 			System.out.println("Last Schedule hour data generated on : " + diff);
 			Telegram_Connect.Telegram_request("API In-Memory Schedule Hour Request is working in E2E .");
-			AssertJUnit.assertEquals(true, true);
+			Assert.assertEquals(true, true);
 		} else {
 			System.out.println("Last Schedule hour data generated on : " + diff);
 			Telegram_Connect.Telegram_request("API In_Memory Schedule Hour Request  is not working in E2E .");
-			AssertJUnit.assertEquals(true, false);
+			Assert.assertEquals(true, false);
 		}
 	}
 	
