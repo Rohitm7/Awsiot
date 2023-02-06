@@ -1,11 +1,14 @@
 package API_hourly_testcases;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Telegram_Send_Msg.Telegram_Connect;
 import api_request.Inmemory_request;
+
+@Listeners(itestListener_Utility.Isuitelistener_test.class)
 
 public class TestClass_API {
 	@Test(priority = 1)
