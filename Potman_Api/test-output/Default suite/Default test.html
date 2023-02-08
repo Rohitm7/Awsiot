@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 20 17:22:50 IST 2022</td>
+<td>Started on:</td><td>Wed Feb 08 10:31:10 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2567 ms)</td>
+<tr><td>Total time:</td><td>12 seconds (12192 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,11 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Testclasses.API_tets.WWW_Inmemory()'><b>WWW_Inmemory</b><br>Test class: Testclasses.API_tets</td>
-<td><div><pre>java.text.ParseException: Unparseable date: &quot;&quot;utz1FDTsAacqx9LL&quot;}&quot;
-	at java.base/java.text.DateFormat.parse(DateFormat.java:396)
-	at Postman_Api_Request.API_Parameter_request.Calculate_Difference(API_Parameter_request.java:160)
-	at Testclasses.API_tets.WWW_Inmemory(API_tets.java:98)
+<td title='Testclasses.API_tets.WWW_DB()'><b>WWW_DB</b><br>Test class: Testclasses.API_tets</td>
+<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at Testclasses.API_tets.WWW_DB(API_tets.java:107)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -108,11 +112,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1047515321", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1047515321'><pre>java.text.ParseException: Unparseable date: &quot;&quot;utz1FDTsAacqx9LL&quot;}&quot;
-	at java.base/java.text.DateFormat.parse(DateFormat.java:396)
-	at Postman_Api_Request.API_Parameter_request.Calculate_Difference(API_Parameter_request.java:160)
-	at Testclasses.API_tets.WWW_Inmemory(API_tets.java:98)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1327539680", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1327539680'><pre>java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at Testclasses.API_tets.WWW_DB(API_tets.java:107)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -142,8 +150,31 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
+<td>0</td>
+<td>Testclasses.API_tets@10feca44</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Testclasses.API_tets.E2E_Inmemory()'><b>E2E_Inmemory</b><br>Test class: Testclasses.API_tets</td>
+<td></td>
 <td>2</td>
-<td>Testclasses.API_tets@7a419da4</td></tr>
+<td>Testclasses.API_tets@10feca44</td></tr>
+<tr>
+<td title='Testclasses.API_tets.WWW_Inmemory()'><b>WWW_Inmemory</b><br>Test class: Testclasses.API_tets</td>
+<td></td>
+<td>2</td>
+<td>Testclasses.API_tets@10feca44</td></tr>
+<tr>
+<td title='Testclasses.API_tets.E2E_DB()'><b>E2E_DB</b><br>Test class: Testclasses.API_tets</td>
+<td></td>
+<td>6</td>
+<td>Testclasses.API_tets@10feca44</td></tr>
 </table><p>
 </body>
 </html>

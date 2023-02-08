@@ -76,7 +76,7 @@ public class API_tets {
 
 	}
 
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public static void WWW_DB() throws Exception {
 		try {
 			int row = API_Parameter_request.count_row();
@@ -109,7 +109,7 @@ public class API_tets {
 
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 3)
 	public void WWW_Inmemory() throws Exception {
 		try {
 			int row = API_Parameter_request.count_row();

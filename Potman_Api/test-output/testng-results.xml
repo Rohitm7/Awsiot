@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-20T17:22:50 IST" name="Default suite" finished-at="2022-09-20T17:22:53 IST" duration-ms="2567">
+  <suite started-at="2023-02-08T10:31:10 IST" name="Default suite" finished-at="2023-02-08T10:31:22 IST" duration-ms="12192">
     <groups>
     </groups>
-    <test started-at="2022-09-20T17:22:50 IST" name="Default test" finished-at="2022-09-20T17:22:53 IST" duration-ms="2567">
+    <test started-at="2023-02-08T10:31:10 IST" name="Default test" finished-at="2023-02-08T10:31:22 IST" duration-ms="12192">
       <class name="Testclasses.API_tets">
-        <test-method signature="WWW_Inmemory()[pri:4, instance:Testclasses.API_tets@7a419da4]" started-at="2022-09-20T17:22:50 IST" name="WWW_Inmemory" finished-at="2022-09-20T17:22:53 IST" duration-ms="2514" status="FAIL">
-          <exception class="java.text.ParseException">
+        <test-method signature="E2E_DB()[pri:1, instance:Testclasses.API_tets@10feca44]" started-at="2023-02-08T10:31:10 IST" name="E2E_DB" finished-at="2023-02-08T10:31:17 IST" duration-ms="6425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E2E_DB -->
+        <test-method signature="E2E_Inmemory()[pri:2, instance:Testclasses.API_tets@10feca44]" started-at="2023-02-08T10:31:17 IST" name="E2E_Inmemory" finished-at="2023-02-08T10:31:19 IST" duration-ms="2484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E2E_Inmemory -->
+        <test-method signature="WWW_DB()[pri:3, instance:Testclasses.API_tets@10feca44]" started-at="2023-02-08T10:31:19 IST" name="WWW_DB" finished-at="2023-02-08T10:31:20 IST" duration-ms="556" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unparseable date: ""utz1FDTsAacqx9LL"}"]]>
+              <![CDATA[expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.text.ParseException: Unparseable date: ""utz1FDTsAacqx9LL"}"
-at java.base/java.text.DateFormat.parse(DateFormat.java:396)
-at Postman_Api_Request.API_Parameter_request.Calculate_Difference(API_Parameter_request.java:160)
-at Testclasses.API_tets.WWW_Inmemory(API_tets.java:98)
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:819)
+at org.testng.Assert.assertEquals(Assert.java:829)
+at Testclasses.API_tets.WWW_DB(API_tets.java:107)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -47,7 +59,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.text.ParseException -->
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WWW_DB -->
+        <test-method signature="WWW_Inmemory()[pri:4, instance:Testclasses.API_tets@10feca44]" started-at="2023-02-08T10:31:20 IST" name="WWW_Inmemory" finished-at="2023-02-08T10:31:22 IST" duration-ms="2604" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WWW_Inmemory -->

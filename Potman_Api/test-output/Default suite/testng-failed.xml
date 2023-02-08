@@ -5,7 +5,7 @@
     <classes>
       <class name="Testclasses.API_tets">
         <methods>
-          <include name="WWW_Inmemory"/>
+          <include name="WWW_DB"/>
         </methods>
       </class> <!-- Testclasses.API_tets -->
     </classes>
