@@ -43,7 +43,7 @@ public class Inmemory_request {
 		String api_Inmem_url = config_read.read_configvalue("Api_Url"+i);
 		String Key = config_read.read_configvalue("key"+i);
 		post(api_Inmem_url, "{\"key\":\"" + Key
-				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"MG2GFRP1_schedule_day\",\"limit\": 1,\"query\": {}}");
+				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"Automation_Device2_schedule_day\",\"limit\": 1,\"query\": {}}");
 	}
 
 
