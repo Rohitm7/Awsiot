@@ -48,7 +48,9 @@ public class TestCases_API_Inmem extends WebdriverManager_Setup {
 		for (int i = 2; i < 5; i++) {
 			// Using For loop reading Ph values without PH unit
 			String PH_values = driver.findElement(By.xpath("//table/tbody/tr[2]/th[" + i + "]")).getText();
+			
 			//PH_values = PH_values.substring(0, 3);
+			
 			PH_values = PH_values.replace("pH", " ");
 
 			// Converting Ph values string to Integer
