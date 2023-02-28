@@ -65,11 +65,9 @@ public class Sending_Mail_html {
 		// SMTP info
 		String host = "smtp.gmail.com";
 		String port = "587";
-		String mailFrom = "userrohituntangleds@gmail.com";
-		// String password = "fopuapjtkangtcpj";//mail and MAC
-		// String password ="woawuffhvcdmyyvb"; //Others and JAVA
-
-		String password = "zzmuivvyjdypimxu";// Others and Jenkins
+		
+		String mailFrom = "automationwimate@gmail.com";
+		String password = "usclyhgnwbcwsfmg";// Others and Jenkins
 
 		// message info
 		String mailTo = "rohit@untangleds.com";
