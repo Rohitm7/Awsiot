@@ -24,16 +24,14 @@ public class Sending_Mail_html {
 			String toAddress, String subject, String message) throws AddressException, MessagingException {
 
 		// sets SMTP server properties
-		Properties properties = new Properties();
-		properties.put("mail.smtp.socketFactory.port", "587");
-		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-		properties.put("mail.smtp.auth", "true");
-		properties.put("mail.smtp.host", host);
-		properties.put("mail.smtp.port", port);
-		properties.put("mail.smtp.auth", "true");
-		properties.put("mail.smtp.starttls.enable", "true");
-		properties.put("mail.user", userName);
-		properties.put("mail.password", password);
+		Properties props = new Properties();
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.user", userName);
+		props.put("mail.password", password);
 		// creates a new session with an authenticator
 		
 	    System.out.println("Encoded String :"+password);
@@ -48,7 +46,7 @@ public class Sending_Mail_html {
 			}
 		};
 
-		Session session = Session.getInstance(properties, auth);
+		Session session = Session.getInstance(props, auth);
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
