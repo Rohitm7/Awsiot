@@ -1,5 +1,6 @@
 package Test_Class;
 
+import org.testng.annotations.Test;
 import java.util.Base64;
 
 import org.testng.annotations.Test;
