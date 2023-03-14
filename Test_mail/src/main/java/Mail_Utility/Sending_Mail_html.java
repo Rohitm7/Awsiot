@@ -25,7 +25,7 @@ public class Sending_Mail_html {
 
 		// sets SMTP server properties
 		Properties properties = new Properties();
-		properties.put("mail.smtp.socketFactory.port", "465");
+		properties.put("mail.smtp.socketFactory.port", "587");
 		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		properties.put("mail.smtp.auth", "true");
 		properties.put("mail.smtp.host", host);
