@@ -36,13 +36,13 @@ public class Sending_Mail_html {
 		
 	    System.out.println("Encoded String :"+password);
 
-		byte[] decodedBytes = Base64.getDecoder().decode(password);
-		String decodedString = new String(decodedBytes);
-		System.out.println("Decoded String :"+decodedString);
+		//byte[] decodedBytes = Base64.getDecoder().decode(password);
+		//String decodedString = new String(decodedBytes);
+	//	System.out.println("Decoded String :"+decodedString);
 
 		Authenticator auth = new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(userName, decodedString);
+				return new PasswordAuthentication(userName, password);
 			}
 		};
 
@@ -74,8 +74,8 @@ public class Sending_Mail_html {
 
 		String password = config_read.read_configvalue("apppassword");
 		
-		String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
-		System.out.println("Encrypted password: " + encryptedpassword);
+		//String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
+		//System.out.println("Encrypted password: " + encryptedpassword);
 
 		// message info
 		String mailTo = config_read.read_configvalue("mailTo");
@@ -109,7 +109,7 @@ public class Sending_Mail_html {
 		String subject = "Testing mail with git," + LocalDateTime.now() + "";
 
 		try {
-			sendEmailWithAttachments(host, port, mailFrom, encryptedpassword, mailTo, subject, message);
+			sendEmailWithAttachments(host, port, mailFrom, password, mailTo, subject, message);
 			System.out.println("Email sent Succesfully..");
 		} catch (Exception ex) {
 			System.out.println("Could not send email.");
