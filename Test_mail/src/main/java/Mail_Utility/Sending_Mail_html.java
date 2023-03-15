@@ -34,15 +34,15 @@ public class Sending_Mail_html {
 		props.put("mail.password", password);
 		// creates a new session with an authenticator
 		
-	    System.out.println("Encoded String :"+password);
+	    //System.out.println("Encoded String :"+password);
 
-		//byte[] decodedBytes = Base64.getDecoder().decode(password);
-		//String decodedString = new String(decodedBytes);
-	//	System.out.println("Decoded String :"+decodedString);
+		byte[] decodedBytes = Base64.getDecoder().decode(password);
+		String decodedString = new String(decodedBytes);
+		System.out.println("Decoded String :"+decodedString);
 
 		Authenticator auth = new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(userName, password);
+				return new PasswordAuthentication(userName, decodedString);
 			}
 		};
 
