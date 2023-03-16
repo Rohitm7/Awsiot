@@ -79,8 +79,8 @@ public class Sending_Mail_html {
 
 		String password = config_read.read_configvalue("apppassword");
 		
-		String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
-		System.out.println("Encrypted password: " + encryptedpassword);
+		//String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
+		//System.out.println("Encrypted password: " + encryptedpassword);
 
 		// Message info
 		String mailTo = config_read.read_configvalue("mailTo");
@@ -128,7 +128,7 @@ public class Sending_Mail_html {
 		Calendar now = Calendar.getInstance();
 
 		try {
-			sendEmailWithAttachments(host, port, mailFrom, encryptedpassword, mailTo, subject, message);
+			sendEmailWithAttachments(host, port, mailFrom, password, mailTo, subject, message);
 			// System.out.println("Email sent Succesfully..");
 		} catch (Exception ex) {
 			ex.printStackTrace();
