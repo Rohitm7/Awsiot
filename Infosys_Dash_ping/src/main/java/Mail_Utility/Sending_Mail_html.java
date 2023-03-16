@@ -79,8 +79,8 @@ public class Sending_Mail_html {
 
 		String password = config_read.read_configvalue("apppassword");
 		
-		//String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
-		//System.out.println("Encrypted password: " + encryptedpassword);
+		String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
+		System.out.println("Encrypted password: " + encryptedpassword);
 
 		// Message info
 		String mailTo = config_read.read_configvalue("mailTo");
