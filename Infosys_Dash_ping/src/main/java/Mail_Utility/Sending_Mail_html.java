@@ -83,7 +83,7 @@ public class Sending_Mail_html {
 		System.out.println("Encrypted password: " + encryptedpassword);
 
 		// Message info
-		String mailTo = "rohit@untangleds.com";
+		String mailTo = config_read.read_configvalue("mailTo");
 		String ProjectName = "Infosys dashboard";
 		String message = "Dashboard Status";
 		message = "<h1><font color=blue><b>Test Reports<b></font></h1>";
