@@ -75,7 +75,7 @@ public class Sending_Mail_html {
 		String host = "smtp.gmail.com";
 		String port = "587";
 		String mailFrom = config_read.read_configvalue("mailFrom");
-		//System.out.println(mailFrom);
+		System.out.println(mailFrom);
 
 		String password = config_read.read_configvalue("apppassword");
 		
