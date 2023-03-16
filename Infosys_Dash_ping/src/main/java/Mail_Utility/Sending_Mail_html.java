@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
@@ -24,6 +25,8 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import Config_Utility.config_read;
+
 public class Sending_Mail_html {
 
 	public static void sendEmailWithAttachments(String host, String port, final String userName, final String password,
@@ -31,19 +34,22 @@ public class Sending_Mail_html {
 
 		// sets SMTP server properties
 		Properties properties = new Properties();
-		properties.put("mail.smtp.socketFactory.port", "465");
-		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.port", "587");
 		properties.put("mail.smtp.auth", "true");
-		properties.put("mail.smtp.host", host);
-		properties.put("mail.smtp.port", port);
+		properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
 		properties.put("mail.smtp.starttls.enable", "true");
 		properties.put("mail.user", userName);
 		properties.put("mail.password", password);
 		// creates a new session with an authenticator
+		
+		byte[] decodedBytes = Base64.getDecoder().decode(password);
+		String decodedString = new String(decodedBytes);
+		System.out.println("Decoded String :"+decodedString);
 
 		Authenticator auth = new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(userName, password);
+				return new PasswordAuthentication(userName, decodedString);
 			}
 		};
 
@@ -64,15 +70,17 @@ public class Sending_Mail_html {
 		Transport.send(msg);
 	}
 
-	public static void main(String message1) {
+	public static void main(String message1) throws Exception {
 		// SMTP info
 		String host = "smtp.gmail.com";
 		String port = "587";
-		//String mailFrom = "cloudtesla@wimate.in";
-		//String password = "rnmfpibiyjllugqj";// Others and Jenkins
+		String mailFrom = config_read.read_configvalue("mailFrom");
+		//System.out.println(mailFrom);
+
+		String password = config_read.read_configvalue("apppassword");
 		
-		String mailFrom = "automationwimate@gmail.com";
-        String password = "usclyhgnwbcwsfmg";// Others and Jenkins
+		String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
+		System.out.println("Encrypted password: " + encryptedpassword);
 
 		// Message info
 		String mailTo = "rohit@untangleds.com";
@@ -120,7 +128,7 @@ public class Sending_Mail_html {
 		Calendar now = Calendar.getInstance();
 
 		try {
-			sendEmailWithAttachments(host, port, mailFrom, password, mailTo, subject, message);
+			sendEmailWithAttachments(host, port, mailFrom, encryptedpassword, mailTo, subject, message);
 			// System.out.println("Email sent Succesfully..");
 		} catch (Exception ex) {
 			ex.printStackTrace();
