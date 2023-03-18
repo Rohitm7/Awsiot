@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-28T10:13:16 IST" name="Default suite" finished-at="2023-02-28T10:13:35 IST" duration-ms="19634">
+  <suite started-at="2023-03-18T12:02:46 IST" name="Default suite" finished-at="2023-03-18T12:03:04 IST" duration-ms="17681">
     <groups>
     </groups>
-    <test started-at="2023-02-28T10:13:16 IST" name="Default test" finished-at="2023-02-28T10:13:35 IST" duration-ms="19634">
+    <test started-at="2023-03-18T12:02:46 IST" name="Default test" finished-at="2023-03-18T12:03:04 IST" duration-ms="17681">
       <class name="TestClass_API.TestCases_API_Inmem">
-        <test-method is-config="true" signature="Beforemethod()[pri:0, instance:TestClass_API.TestCases_API_Inmem@67c33749]" started-at="2023-02-28T10:13:16 IST" name="Beforemethod" finished-at="2023-02-28T10:13:19 IST" duration-ms="3456" status="PASS">
+        <test-method is-config="true" signature="Beforemethod()[pri:0, instance:TestClass_API.TestCases_API_Inmem@67c33749]" started-at="2023-03-18T12:02:46 IST" name="Beforemethod" finished-at="2023-03-18T12:02:49 IST" duration-ms="2981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Beforemethod -->
-        <test-method signature="Infosys_Ping()[pri:0, instance:TestClass_API.TestCases_API_Inmem@67c33749]" started-at="2023-02-28T10:13:19 IST" name="Infosys_Ping" finished-at="2023-02-28T10:13:35 IST" duration-ms="16134" status="PASS">
+        <test-method signature="Infosys_Ping()[pri:0, instance:TestClass_API.TestCases_API_Inmem@67c33749]" started-at="2023-03-18T12:02:49 IST" name="Infosys_Ping" finished-at="2023-03-18T12:03:04 IST" duration-ms="14616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Infosys_Ping -->
