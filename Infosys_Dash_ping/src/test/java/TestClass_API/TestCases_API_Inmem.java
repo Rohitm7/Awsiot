@@ -14,7 +14,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import Mail_Utility.Sending_Mail_html;
 import Screenshot_Utility.Takescrenshot;
 import Telegram_Send_Msg.Telegram_Connect;
 import Webdrivermanager_Utility.WebdriverManager_Setup;
