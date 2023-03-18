@@ -19,6 +19,7 @@ public class Isuitelistener_test implements ISuiteListener {
 	@Override
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
+		//infoysys Dashboard
 	}
 
 	@Override
