@@ -32,6 +32,8 @@ public class Sending_Mail_Java {
 	public static void sendEmailWithAttachments(String host, String port, final String userName, final String password,
 			String toAddress, String subject, String message) throws Exception {
 
+		Session session = null;
+		
 		// sets SMTP server properties
 		Properties properties = new Properties();
 		properties.put("mail.smtp.host", "smtp.gmail.com");
@@ -42,18 +44,23 @@ public class Sending_Mail_Java {
 		properties.put("mail.user", userName);
 		properties.put("mail.password", password);
 		// creates a new session with an authenticator
-		
+
 		byte[] decodedBytes = Base64.getDecoder().decode(password);
 		String decodedString = new String(decodedBytes);
-		System.out.println("Decoded String :"+decodedString);
+		System.out.println("Decoded String :" + decodedString);
 
-		Authenticator auth = new Authenticator() {
-			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(userName, decodedString);
-			}
-		};
-
-		Session session = Session.getInstance(properties, auth);
+		String PASS1 = config_read.read_configvalue("apppassword");
+		if (decodedString.equals(PASS1)) {
+			Authenticator auth = new Authenticator() {
+				public PasswordAuthentication getPasswordAuthentication() {
+					return new PasswordAuthentication(userName, decodedString);
+				}
+			};
+		 session = Session.getInstance(properties, auth);		
+		}
+		else {
+			System.out.println("OHH...Both Password are not matcging.");
+		}
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
@@ -78,7 +85,6 @@ public class Sending_Mail_Java {
 		System.out.println(mailFrom);
 
 		String password = config_read.read_configvalue("apppassword");
-		
 		String encryptedpassword = Base64.getEncoder().encodeToString(password.getBytes());
 		System.out.println("Encrypted password: " + encryptedpassword);
 
@@ -132,7 +138,7 @@ public class Sending_Mail_Java {
 			// System.out.println("Email sent Succesfully..");
 		} catch (Exception ex) {
 			ex.printStackTrace();
-		
+
 		}
 
 	}
