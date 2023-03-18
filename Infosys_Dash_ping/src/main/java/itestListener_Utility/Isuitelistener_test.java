@@ -11,7 +11,7 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ISuiteResult;
 import org.testng.ITestResult;
-import Mail_Utility.Sending_Mail_html;
+import Mail_Utility.Sending_Mail_Java;
 import Telegram_Send_Msg.Telegram_Connect;
 
 public class Isuitelistener_test implements ISuiteListener {
@@ -114,7 +114,7 @@ public class Isuitelistener_test implements ISuiteListener {
 				MailData += TestResult + ",";
 			}
 			MailData = MailData.substring(4);
-			Sending_Mail_html.Mail_Fun(MailData);
+			Sending_Mail_Java.Mail_Fun(MailData);
 
 		} catch (Exception e) {
 			// TODO: handle exception

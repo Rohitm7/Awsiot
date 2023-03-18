@@ -27,7 +27,7 @@ import javax.mail.internet.MimeMultipart;
 
 import Config_Utility.config_read;
 
-public class Sending_Mail_html {
+public class Sending_Mail_Java {
 
 	public static void sendEmailWithAttachments(String host, String port, final String userName, final String password,
 			String toAddress, String subject, String message) throws Exception {
