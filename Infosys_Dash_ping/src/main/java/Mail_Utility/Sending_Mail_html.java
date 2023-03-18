@@ -70,7 +70,7 @@ public class Sending_Mail_html {
 		Transport.send(msg);
 	}
 
-	public static void main(String message1) throws Exception {
+	public static void Mail_Fun(String message1) throws Exception {
 		// SMTP info
 		String host = "smtp.gmail.com";
 		String port = "587";
