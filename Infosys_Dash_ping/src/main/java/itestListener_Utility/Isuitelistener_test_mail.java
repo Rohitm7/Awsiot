@@ -14,7 +14,7 @@ import org.testng.ITestResult;
 import Mail_Utility.Sending_Mail_Java;
 import Telegram_Send_Msg.Telegram_Connect;
 
-public class Isuitelistener_test implements ISuiteListener {
+public class Isuitelistener_test_mail implements ISuiteListener {
 
 	@Override
 	public void onStart(ISuite suite) {

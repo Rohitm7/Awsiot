@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import Telegram_Send_Msg.Telegram_Connect;
 import Webdrivermanager_Utility.WebdriverManager_Setup;
 
-@Listeners(itestListener_Utility.Isuitelistener_test.class)
+@Listeners(itestListener_Utility.Isuitelistener_test_mail.class)
 
 public class TestCases_API_Inmem extends WebdriverManager_Setup {
 
