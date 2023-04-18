@@ -7,6 +7,7 @@ public class Delete_File {
 		String path = "/Users/testingwimate/Desktop/Automation_Screenshots/";
 		File file = new File(path);
 		File[] files = file.listFiles();
+		System.out.println("Files :"+files);
 		for (File f : files) {
 			if (f.isFile() && f.exists()) {
 				f.delete();
