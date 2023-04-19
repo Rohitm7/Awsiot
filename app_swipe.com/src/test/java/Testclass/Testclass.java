@@ -22,10 +22,10 @@ public class Testclass {
 	@Test
 	public void testcases() throws Exception{
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability("deviceName", "POCO M4 Pro");
-		cap.setCapability("udid", "10.0.1.3:5555");
+		cap.setCapability("deviceName", "Samsung Testing Phone");
+		cap.setCapability("udid", "10.0.1.130:5555");
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "12");
+		cap.setCapability("platformVersion", "13");
 
 	//	cap.setCapability("appPackage", "com.sec.android.gallery3d");
 	//	cap.setCapability("appActivity", "com.samsung.android.gallary.app.activity.GalleryActivity");
@@ -45,7 +45,7 @@ public class Testclass {
 
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("(//android.view.View[@index='4'])[2]")).click();
+		driver.findElement(By.xpath("//android.view.View[@index='4'])[2]")).click();
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.Button[@text='SCAN']")).click();
