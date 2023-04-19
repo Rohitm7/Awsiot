@@ -1,14 +1,15 @@
-package App_Automation;
+package Testclass;
 
 import java.net.URL;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import io.appium.java_client.android.AndroidDriver;
 
-public class Swipe_App {
-	
+public class Testclass {
 	static AndroidDriver driver;
-
-	public static void main(String[] args) throws Exception {
+	
+	public void testcases() throws Exception{
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("deviceName", "Samsung Testing Phone");
 		cap.setCapability("udid", "10.0.1.130:5555");
