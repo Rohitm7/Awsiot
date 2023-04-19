@@ -59,13 +59,13 @@ public class Testclass {
 
 		// Define the starting and ending coordinates of the swipe gesture
 		Point startPoint = new Point(500, 1500);
-		Point endPoint = new Point(500, 1000);
+		Point endPoint = new Point(500, 0);
 
 		// Create a new PointerInput object
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 
 		// Create a new Sequence object
-		Sequence swipe = new Sequence(finger, 1);
+		Sequence swipe = new Sequence(finger, 2);
 
 		// Add a pointer move action to the starting point
 		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
