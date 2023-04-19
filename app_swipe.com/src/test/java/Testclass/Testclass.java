@@ -25,7 +25,7 @@ public class Testclass {
 		cap.setCapability("deviceName", "Samsung Testing Phone");
 		cap.setCapability("udid", "10.0.1.130:5555");
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "13");
+		cap.setCapability("platformVersion", "12");
 
 	//	cap.setCapability("appPackage", "com.sec.android.gallery3d");
 	//	cap.setCapability("appActivity", "com.samsung.android.gallary.app.activity.GalleryActivity");
