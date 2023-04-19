@@ -15,8 +15,11 @@ public class Testclass {
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "13");
 
-		cap.setCapability("appPackage", "com.sec.android.gallery3d");
-		cap.setCapability("appActivity", "com.samsung.android.gallary.app.activity.GalleryActivity");
+	//	cap.setCapability("appPackage", "com.sec.android.gallery3d");
+	//	cap.setCapability("appActivity", "com.samsung.android.gallary.app.activity.GalleryActivity");
+		
+		cap.setCapability("appPackage", "io.ionic.starter.untangled_ams_task");
+		cap.setCapability("appActivity", "io.ionic.starter.untangled_ams_task.MainActivity");
 
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AndroidDriver(url, cap);
