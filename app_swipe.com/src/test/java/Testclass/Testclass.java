@@ -11,14 +11,13 @@ import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class Testclass {
-	static AndroidDriver<MobileElement> driver;
+	static AndroidDriver  driver;
 	
 	@Test
 	public void testcases() throws Exception{
