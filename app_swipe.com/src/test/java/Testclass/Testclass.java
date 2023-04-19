@@ -71,6 +71,12 @@ public class Testclass {
 		int startY = location.getY() + (int) (0.8 * size.getHeight());
 		int endX = location.getX() + (int) (0.5 * size.getWidth());
 		int endY = location.getY() + (int) (0.2 * size.getHeight());
+		
+		System.out.println("startX :"+startX);
+		System.out.println("startX :"+startY);
+		System.out.println("startX :"+endX);
+		System.out.println("startX :"+endY);
+		
 		Point startPoint = new Point(500, 1500);
 		Point endPoint = new Point(0, 0);
 
