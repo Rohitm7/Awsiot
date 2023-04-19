@@ -35,7 +35,7 @@ public class Testclass {
 		cap.setCapability("appActivity", "io.ionic.starter.untangled_ams_task.MainActivity");
 			
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
-		driver = new AndroidDriver<MobileElement>(url, cap);
+		driver = new AndroidDriver(url, cap);
 		System.out.println("Application Launched");
 		
 		Thread.sleep(2000);
@@ -60,22 +60,22 @@ public class Testclass {
 
 		// Define the starting and ending coordinates of the swipe gesture
 		
-		MobileElement element = driver.findElement(By.xpath("//android.widget.TextView[text()='ID: 1681445918439']"));
-
-		// Get the location and size of the element
-		Point location = element.getLocation();
-		Dimension size = element.getSize();
-
-		// Define the start and end point coordinates for the swipe gesture
-		int startX = location.getX() + (int) (0.5 * size.getWidth());
-		int startY = location.getY() + (int) (0.8 * size.getHeight());
-		int endX = location.getX() + (int) (0.5 * size.getWidth());
-		int endY = location.getY() + (int) (0.2 * size.getHeight());
-		
-		System.out.println("startX :"+startX);
-		System.out.println("startX :"+startY);
-		System.out.println("startX :"+endX);
-		System.out.println("startX :"+endY);
+//		MobileElement element = driver.findElement(By.xpath("//android.widget.TextView[text()='ID: 1681445918439']"));
+//
+//		// Get the location and size of the element
+//		Point location = element.getLocation();
+//		Dimension size = element.getSize();
+//
+//		// Define the start and end point coordinates for the swipe gesture
+//		int startX = location.getX() + (int) (0.5 * size.getWidth());
+//		int startY = location.getY() + (int) (0.8 * size.getHeight());
+//		int endX = location.getX() + (int) (0.5 * size.getWidth());
+//		int endY = location.getY() + (int) (0.2 * size.getHeight());
+//		
+//		System.out.println("startX :"+startX);
+//		System.out.println("startX :"+startY);
+//		System.out.println("startX :"+endX);
+//		System.out.println("startX :"+endY);
 		
 		Point startPoint = new Point(500, 1500);
 		Point endPoint = new Point(0, 0);
