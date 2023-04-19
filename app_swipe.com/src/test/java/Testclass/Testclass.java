@@ -49,6 +49,10 @@ public class Testclass {
 
 		Thread.sleep(2000);
 		
+/*
+ * Touch Action class is deprecated so in upcoming version it will be removed.
+ */
+				
 //		TouchAction action = new TouchAction(driver);
 //		action.press(PointOption.point(500, 1500))
 //		      .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
@@ -56,7 +60,10 @@ public class Testclass {
 //		      .release()
 //		      .perform();
 
-
+/*
+ * For this one Java Client API should 7.6.0 but in that also throwing some error.
+ */
+		
 		// Define the starting and ending coordinates of the swipe gesture
 		
 //		MobileElement element = driver.findElement(By.xpath("//android.widget.TextView[text()='ID: 1681445918439']"));
@@ -75,8 +82,15 @@ public class Testclass {
 //		System.out.println("startX :"+startY);
 //		System.out.println("startX :"+endX);
 //		System.out.println("startX :"+endY);
+
 		
+		/*
+		 * This will support in new version w3c scroll 
+		 */
+		//Using 500,1500 pointer will go touch to the middle of the page.
 		Point startPoint = new Point(500, 1500);
+		//Using 0,0  100% page is scrooling upto 7 Assigned Ticeket is scrolling...
+		//Using -500,-1500 300% page is scrolling upto 21 Assigned Ticket is scrolling.
 		Point endPoint = new Point(0, 0);
 
 		// Create a new PointerInput object
