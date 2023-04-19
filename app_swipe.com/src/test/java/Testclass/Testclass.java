@@ -14,6 +14,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class Testclass {
 	static AndroidDriver driver;
+	
 	@Test
 	public void testcases() throws Exception{
 		DesiredCapabilities cap = new DesiredCapabilities();
