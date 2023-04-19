@@ -45,9 +45,16 @@ public class Testclass {
 
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Assigned Tickets']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Task']")).click();
 
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//android.widget.Button[@text='SCAN']")).click();
+		Thread.sleep(1500);
+		
+		driver.findElement(By.xpath("//android.widget.Button[@text='While using the app']")).click();
+		Thread.sleep(500);
+
+
 		
 /*
  * Touch Action class is deprecated so in upcoming version it will be removed.
