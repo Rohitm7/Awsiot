@@ -3,12 +3,13 @@ package Testclass;
 import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class Testclass {
 	static AndroidDriver driver;
-	
+	@Test
 	public void testcases() throws Exception{
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("deviceName", "Samsung Testing Phone");
