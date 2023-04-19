@@ -1,23 +1,24 @@
 package Testclass;
 
-import java.awt.Point;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
-
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class Testclass {
-	static AndroidDriver driver;
+	static AndroidDriver<MobileElement> driver;
 	
 	@Test
 	public void testcases() throws Exception{
@@ -34,7 +35,7 @@ public class Testclass {
 		cap.setCapability("appActivity", "io.ionic.starter.untangled_ams_task.MainActivity");
 			
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
-		driver = new AndroidDriver(url, cap);
+		driver = new AndroidDriver<MobileElement>(url, cap);
 		System.out.println("Application Launched");
 		
 		Thread.sleep(2000);
@@ -58,6 +59,18 @@ public class Testclass {
 
 
 		// Define the starting and ending coordinates of the swipe gesture
+		
+		MobileElement element = driver.findElement(By.xpath("//android.widget.TextView[text()='ID: 1681445918439']"));
+
+		// Get the location and size of the element
+		Point location = element.getLocation();
+		Dimension size = element.getSize();
+
+		// Define the start and end point coordinates for the swipe gesture
+		int startX = location.getX() + (int) (0.5 * size.getWidth());
+		int startY = location.getY() + (int) (0.8 * size.getHeight());
+		int endX = location.getX() + (int) (0.5 * size.getWidth());
+		int endY = location.getY() + (int) (0.2 * size.getHeight());
 		Point startPoint = new Point(500, 1500);
 		Point endPoint = new Point(0, 0);
 
