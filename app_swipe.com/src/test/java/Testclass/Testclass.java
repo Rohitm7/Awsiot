@@ -77,7 +77,7 @@ public class Testclass {
 //		System.out.println("startX :"+endY);
 		
 		Point startPoint = new Point(500, 1500);
-		Point endPoint = new Point(0, 0);
+		Point endPoint = new Point(-500, -1500);
 
 		// Create a new PointerInput object
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
