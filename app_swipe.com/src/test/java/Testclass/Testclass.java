@@ -1,9 +1,13 @@
 package Testclass;
 
+import java.awt.Point;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Arrays;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
@@ -45,13 +49,38 @@ public class Testclass {
 
 		Thread.sleep(2000);
 		
-		TouchAction action = new TouchAction(driver);
-		action.press(PointOption.point(500, 1500))
-		      .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
-		      .moveTo(PointOption.point(500, 1000))
-		      .release()
-		      .perform();
+//		TouchAction action = new TouchAction(driver);
+//		action.press(PointOption.point(500, 1500))
+//		      .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
+//		      .moveTo(PointOption.point(500, 1000))
+//		      .release()
+//		      .perform();
 
+
+		// Define the starting and ending coordinates of the swipe gesture
+		Point startPoint = new Point(500, 1500);
+		Point endPoint = new Point(500, 1000);
+
+		// Create a new PointerInput object
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+		// Create a new Sequence object
+		Sequence swipe = new Sequence(finger, 1);
+
+		// Add a pointer move action to the starting point
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
+
+		// Add a pointer down action to simulate touching the screen
+		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+
+		// Add a pointer move action to the ending point
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endPoint.x, endPoint.y));
+
+		// Add a pointer up action to simulate releasing the screen
+		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+		// Perform the swipe gesture
+		driver.perform(Arrays.asList(swipe));
 		
 	}
 
