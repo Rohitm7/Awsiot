@@ -45,7 +45,7 @@ public class Testclass {
 
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Task']")).click();
+		driver.findElement(By.xpath("(//android.view.View[@index='4'])[2]")).click();
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.Button[@text='SCAN']")).click();
