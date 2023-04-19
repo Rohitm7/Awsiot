@@ -21,6 +21,7 @@ public class Swipe_App {
 		driver = new AndroidDriver(url, cap);
 
 		System.out.println("Application Launched");
+		
 
 		Thread.sleep(3000);
 	}
