@@ -22,8 +22,8 @@ public class Testclass {
 	@Test
 	public void testcases() throws Exception{
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability("deviceName", "Samsung Testing Phone");
-		cap.setCapability("udid", "10.0.1.130:5555");
+		cap.setCapability("deviceName", "POCO M4 Pro");
+		cap.setCapability("udid", "10.0.1.3:5555");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "12");
 
