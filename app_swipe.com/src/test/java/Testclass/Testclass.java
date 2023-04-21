@@ -59,23 +59,26 @@ public class Testclass {
 
 		// Form Type = Test_Parameter30ID
 		// Id Webelement
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("Test_R_ID_01");
+		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("Test_R_ID_01");
 
-		//driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[1]")).sendKeys("Test_R_ID_01");
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[0]")).sendKeys("Test_R_ID_01");
 		// Description
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[2]")).sendKeys("Test_R_Des_01");
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[1]")).sendKeys("Test_R_Des_01");
 		// Parameter_2 Text
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[4]")).sendKeys("R_Text_01");
 		
 		// Parameter_3 Number
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).click();
 		Thread.sleep(1000);
+		
 		KeyEvent keyEvent2 = new KeyEvent().withKey(AndroidKey.DIGIT_2);
+		
         driver.pressKey(keyEvent2);
 		Thread.sleep(500);
         // Press "7" key
         KeyEvent keyEvent7 = new KeyEvent().withKey(AndroidKey.DIGIT_7);
         driver.pressKey(keyEvent7);
+        driver.navigate().back();
 
 		// Parameter_4 Text
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).sendKeys("R_Text_02");
