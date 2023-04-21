@@ -64,8 +64,10 @@ public class Testclass {
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[2]")).sendKeys("Test_R_Des_01");
 		// Parameter_2 Text
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[4]")).sendKeys("R_Text_01");
+		
 		// Parameter_3 Number
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).sendKeys(String.valueOf(7));
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).click();
+
 		// Parameter_4 Text
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).sendKeys("R_Text_02");
 		Thread.sleep(1500);
