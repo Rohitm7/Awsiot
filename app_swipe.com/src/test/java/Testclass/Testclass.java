@@ -53,7 +53,7 @@ public class Testclass {
 		Thread.sleep(1500);
 
 		driver.findElement(By.xpath("//android.widget.Button[@text='While using the app']")).click();
-		Thread.sleep(500);
+		Thread.sleep(2000);
 
 		// Form Type = Test_Parameter30ID
 		// Id Webelement
