@@ -30,8 +30,7 @@ public class Testclass {
 		cap.setCapability("platformVersion", "13");
 
 		// cap.setCapability("appPackage", "com.sec.android.gallery3d");
-		// cap.setCapability("appActivity",
-		// "com.samsung.android.gallary.app.activity.GalleryActivity");
+		// cap.setCapability("appActivity","com.samsung.android.gallary.app.activity.GalleryActivity");
 
 		cap.setCapability("appPackage", "io.ionic.starter.untangled_ams_task");
 		cap.setCapability("appActivity", "io.ionic.starter.untangled_ams_task.MainActivity");
@@ -80,20 +79,6 @@ public class Testclass {
 		driver.navigate().back();
 		Thread.sleep(500);
 
-		/*
-		 * Touch Action class is deprecated so in upcoming version it will be removed.
-		 
-		TouchAction action = new TouchAction(driver);
-		action.press(PointOption.point(500, 1500)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
-				.moveTo(PointOption.point(500, 1000)).release().perform();
-
-		System.out.println("Scroll action is performed using touch action");
-		*/
-		
-		/*
-		 * This will support in new version w3c scroll
-		 		*/
-
 		// Using 500,1500 pointer will go touch to the middle of the page.
 		Point startPoint = new Point(500, 1500);
 		// Using 0,0 100% page is scrooling upto 7 Assigned Ticeket is scrolling...
@@ -104,19 +89,16 @@ public class Testclass {
 		// Create a new Sequence object
 		Sequence swipe = new Sequence(finger, 2);
 		// Add a pointer move action to the starting point
-		swipe.addAction(
-				finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
 		// Add a pointer down action to simulate touching the screen
 		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
 		// Add a pointer move action to the ending point
-		swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endPoint.x,
-				endPoint.y));
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endPoint.x,endPoint.y));
 		// Add a pointer up action to simulate releasing the screen
 		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 		// Perform the swipe gesture
 		driver.perform(Arrays.asList(swipe));
 		Thread.sleep(1500);
-
 
 		// Parameter_4 Text
 		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[6]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("R_Text_02");
