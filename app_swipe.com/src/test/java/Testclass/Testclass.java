@@ -59,7 +59,7 @@ public class Testclass {
 
 		// Form Type = Test_Parameter30ID
 		// Id Webelement
-		// driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("Test_R_ID_01");
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("Test_R_ID_01");
 
 		// Description
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[2]")).sendKeys("Test_R_Des_01");
@@ -82,17 +82,18 @@ public class Testclass {
 
 		/*
 		 * Touch Action class is deprecated so in upcoming version it will be removed.
-		 */
-
+		 
 		TouchAction action = new TouchAction(driver);
 		action.press(PointOption.point(500, 1500)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
 				.moveTo(PointOption.point(500, 1000)).release().perform();
 
 		System.out.println("Scroll action is performed using touch action");
+		*/
 		
 		/*
 		 * This will support in new version w3c scroll
-		 
+		 		*/
+
 		// Using 500,1500 pointer will go touch to the middle of the page.
 		Point startPoint = new Point(500, 1500);
 		// Using 0,0 100% page is scrooling upto 7 Assigned Ticeket is scrolling...
@@ -114,11 +115,11 @@ public class Testclass {
 		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 		// Perform the swipe gesture
 		driver.perform(Arrays.asList(swipe));
-		*/
+		Thread.sleep(1500);
+
 
 		// Parameter_4 Text
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).sendKeys("R_Text_02");
-		Thread.sleep(1500);
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[6]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("R_Text_02");
 
 	}
 
