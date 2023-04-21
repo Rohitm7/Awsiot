@@ -13,6 +13,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -67,8 +69,14 @@ public class Testclass {
 		
 		// Parameter_3 Number
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).click();
+		Thread.sleep(1000);
+		KeyEvent keyEvent2 = new KeyEvent().withKey(AndroidKey.DIGIT_2);
+        driver.pressKey(keyEvent2);
+		Thread.sleep(500);
+        // Press "7" key
+        KeyEvent keyEvent7 = new KeyEvent().withKey(AndroidKey.DIGIT_7);
+        driver.pressKey(keyEvent7);
 
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).sendKeys(String.valueOf(7));
 		// Parameter_4 Text
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).sendKeys("R_Text_02");
 		Thread.sleep(1500);
