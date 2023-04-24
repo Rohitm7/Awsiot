@@ -26,7 +26,7 @@ public class TestClass_API {
 
 		if (diff < 11) {
 			System.out.println("Last Schedule Day Data is generated on : " + diff);
-			Telegram_Connect.Telegram_request("API In_memory Schedule Day Request is working in E2E .");
+			//Telegram_Connect.Telegram_request("API In_memory Schedule Day Request is working in E2E .");
 			Assert.assertEquals(true, true);
 		} else {
 			System.out.println("Last Schedule Day Data is generated on : " + diff);
@@ -49,7 +49,7 @@ public class TestClass_API {
 
 		if (diff < 11) {
 			System.out.println("Last Schedule Day Data is generated on : " + diff);
-			Telegram_Connect.Telegram_request("API In_memory Schedule Day Request is working in WWW .");
+			//Telegram_Connect.Telegram_request("API In_memory Schedule Day Request is working in WWW .");
 			Assert.assertEquals(true, true);
 		} else {
 			System.out.println("Last Schedule Day Data is generated on : " + diff);
