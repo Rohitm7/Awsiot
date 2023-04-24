@@ -28,7 +28,7 @@ public class API_tets {
 			if (diff < 16) {
 				System.out.println("Difference for Schedule hour data : " + diff);
 				Excel_write.excelWrite_overwrite("PASS", row, 5, "API_Parameter.xlsx", 0);
-				Telegram_Connect.Telegram_request("API DB Request is working in E2E .");
+			//	Telegram_Connect.Telegram_request("API DB Request is working in E2E .");
 				Assert.assertEquals(true, true);
 			} else {
 				System.out.println("Latest DT is showing wrong in Schedule hour Request : " + diff);
@@ -60,7 +60,7 @@ public class API_tets {
 			if (diff < 16) {
 				System.out.println("Difference for Schedule hour data : " + diff);
 				Excel_write.excelWrite_overwrite("PASS", row, 5, "API_Parameter.xlsx", 0);
-				Telegram_Connect.Telegram_request("API In-Memory Request is working in E2E.");
+				//Telegram_Connect.Telegram_request("API In-Memory Request is working in E2E.");
 				Assert.assertEquals(true, true);
 
 			} else {
@@ -127,7 +127,7 @@ public class API_tets {
 			if (diff < 16) {
 				System.out.println("Difference for Schedule hour data : " + diff);
 				Excel_write.excelWrite_overwrite("PASS", row, 5, "API_Parameter.xlsx", 0);
-				Telegram_Connect.Telegram_request("API In-Memory Request is working in www.");
+			//	Telegram_Connect.Telegram_request("API In-Memory Request is working in www.");
 				Assert.assertEquals(true, true);
 
 			} else {
