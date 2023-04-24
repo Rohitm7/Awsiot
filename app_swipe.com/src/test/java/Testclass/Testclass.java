@@ -83,7 +83,7 @@ public class Testclass {
 		Point startPoint = new Point(500, 1500);
 		// Using 0,0 100% page is scrooling upto 7 Assigned Ticeket is scrolling...
 		// Using -500,-1500 300% page is scrolling upto 21 Assigned Ticket is scrolling.
-		Point endPoint = new Point(0, 0);
+		Point endPoint = new Point(100, 1000);
 		// Create a new PointerInput object
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 		// Create a new Sequence object
