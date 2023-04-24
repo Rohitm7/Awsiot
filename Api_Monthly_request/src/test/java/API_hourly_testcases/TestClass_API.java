@@ -25,7 +25,7 @@ public class TestClass_API {
 
 		if (diff < 31) {
 			System.out.println("Last Schedule Month Data is Generated on : " + diff);
-			Telegram_Connect.Telegram_request("API In-Memory Schedule Month Request is working in E2E.");
+		//	Telegram_Connect.Telegram_request("API In-Memory Schedule Month Request is working in E2E.");
 			AssertJUnit.assertEquals(true, true);
 
 		} else {
@@ -49,7 +49,7 @@ public class TestClass_API {
 
 		if (diff < 31) {
 			System.out.println("Last Schedule Month Data is Generated on : " + diff);
-			Telegram_Connect.Telegram_request("API In-Memory Schedule Month Request is working in E2E.");
+			//Telegram_Connect.Telegram_request("API In-Memory Schedule Month Request is working in E2E.");
 			AssertJUnit.assertEquals(true, true);
 
 		} else {
