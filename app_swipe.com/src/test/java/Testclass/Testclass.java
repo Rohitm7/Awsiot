@@ -101,7 +101,7 @@ public class Testclass {
 		Thread.sleep(1500);
 
 		// Parameter_4 Text
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='1'])[7]")).click();
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[7]")).click();
 
 	}
 
