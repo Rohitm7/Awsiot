@@ -118,7 +118,7 @@ public class Inmemory_request {
 
 	public static long Calculate_Difference(String DT) throws Exception {
 		String Current_DT = End_date_conv();
-		// System.out.println("Current Date :" + Current_DT);
+		System.out.println("Current Date :" + Current_DT);
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
 		Date firstDate = sdf.parse(DT);
@@ -126,7 +126,7 @@ public class Inmemory_request {
 		System.out.println("DT From Packet :" + firstDate);
 		Date secondDate = sdf.parse(Current_DT);
 
-		// System.out.println("Current Date :" + secondDate);
+		System.out.println("Current Date :" + secondDate);
 
 		long diff = secondDate.getTime() - firstDate.getTime();
 		// System.out.println(diff);
@@ -143,11 +143,13 @@ public class Inmemory_request {
 		if (diffInDays > 0) {
 			// diffInSeconds = diffInSeconds / 60;
 			System.out.println("Diifernce In Days : " + diffInDays);
-			return diffInDays;
+			System.out.println("Difference In Hours : " + diffInHours);
+			System.out.println("Difference In Minutes : " + diffInMinutes);
+			return diffInMinutes;
 		} else if (diffInDays == 0 && diffInHours > 2) {
 			System.out.println("Difference In Hours : " + diffInHours);
-			// System.out.println("Difference In Minutes : " + diffInMinutes);
-			return diffInHours;
+			System.out.println("Difference In Minutes : " + diffInMinutes);
+			return diffInMinutes;
 		} else if (diffInHours < 2 && diffInMinutes >= 0) {
 			// diffInMinutes = diffInMinutes / 60;
 			System.out.println("Difference In Minutes : " + diffInMinutes);
@@ -155,7 +157,8 @@ public class Inmemory_request {
 		} else {
 			// diffInSeconds = diffInSeconds / 60;
 			System.out.println("Diifernce In Seconds : " + diffInSeconds);
-			return diffInSeconds;
+			diffInMinutes = diffInSeconds / 60;
+			return diffInMinutes;
 		}
 	}
 }

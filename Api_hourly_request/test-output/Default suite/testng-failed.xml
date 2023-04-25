@@ -5,7 +5,6 @@
     <classes>
       <class name="API_hourly_testcases.TestClass_API">
         <methods>
-          <include name="API_InMemory_WWW_Sch_Hour"/>
           <include name="API_InMemory_E2E_Sch_Hour"/>
         </methods>
       </class> <!-- API_hourly_testcases.TestClass_API -->
