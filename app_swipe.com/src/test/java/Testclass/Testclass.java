@@ -101,7 +101,7 @@ public class Testclass {
 		Thread.sleep(1500);
 
 		// Parameter_4 Text
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[6]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText")).sendKeys("R_Text_02");
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).sendKeys("R_Text_02");
 
 	}
 
