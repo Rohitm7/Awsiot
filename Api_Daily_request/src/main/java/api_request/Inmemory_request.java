@@ -156,7 +156,7 @@ public class Inmemory_request {
 		} else {
 			diffInHours = diffInSeconds /3600;
 			System.out.println("Diifernce In Seconds : " + diffInSeconds);
-			return diffInSeconds;
+			return diffInHours;
 		}
 	}
 }
