@@ -31,7 +31,8 @@ public class TestCases_API_Inmem extends WebdriverManager_Setup {
 	}
 
 	@Test
-	public void Infosys_Ping() throws Exception {
+	public void Infosys_Ping() throws IOException, InterruptedException   {
+		try {
 		String Infosys_Url = config_read.read_configvalue("Infosys_Dash_Url");
 		// launching url
 		System.out.println("Url :" + Infosys_Url);
@@ -71,6 +72,11 @@ public class TestCases_API_Inmem extends WebdriverManager_Setup {
 				Assert.assertEquals(true, false);
 			}
 		}
+		}catch (Exception e) {
+			Telegram_Connect.Telegram_request("PH Values are not within the range or dashboard is not loading...!");
+		}
+	
 	}
+	
 
 }
