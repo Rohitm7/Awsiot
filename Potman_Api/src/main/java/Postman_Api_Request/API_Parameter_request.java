@@ -23,66 +23,67 @@ public class API_Parameter_request {
 
 	public static String DT_DB = null;
 	public static String DT_Inmemory = null;
-	
-	static String[] Instances= new String[]{"e2e","www","e2e","www"};
+
+	static String[] Instances = new String[] { "e2e", "www", "e2e", "www" };
 
 	public static int count_row() {
 		int lastrow = Excel_count_row.Last_rowNumber("API_Parameter.xlsx", 0);
 		lastrow = lastrow + 1;
 		return lastrow;
 	}
-	
+
 	// Request for API-DB Login
-	public static void Postman_Api_DB_login(int i,int row) throws Exception {
-		//row = count_row();
+	public static void Postman_Api_DB_login(int i, int row) throws Exception {
+		// row = count_row();
 		String api_DB_url = config_read.read_configvalue("Api_Url" + i);
-		Excel_write.excelWrite_overwrite(Instances[i],row , 0, "API_Parameter.xlsx", 0);
-		Excel_write.excelWrite_overwrite(api_DB_url,row , 1, "API_Parameter.xlsx", 0);
-		
+		Excel_write.excelWrite_overwrite(Instances[i], row, 0, "API_Parameter.xlsx", 0);
+		Excel_write.excelWrite_overwrite(api_DB_url, row, 1, "API_Parameter.xlsx", 0);
+
 		String username = config_read.read_configvalue("username" + i);
 		String password = config_read.read_configvalue("password" + i);
 		post(api_DB_url, "{\"packet_identifier\":\"login_request\",\"username\":\"" + username + "\",\"password\":\""
-				+ password + "\",\"MI\":1234567890}",row);
+				+ password + "\",\"MI\":1234567890}", row);
 	}
 
 	// Request for DB parameter Data
-	public static void Postman_Api_DB_read_Parameter_Collection(int i,int row) throws Exception {
+	public static void Postman_Api_DB_read_Parameter_Collection(int i, int row) throws Exception {
 		String Start_date_Time = Date_time_conv_inmemory.Start_date_Time_Parameter();
 		String End_date_time = Date_time_conv_inmemory.End_date_conv();
 		String Key = config_read.read_configvalue("key" + i);
 		String api_DB_url = config_read.read_configvalue("Api_Url" + i);
-		
-	    Excel_write.excelWrite_overwrite(Instances[i],row , 0, "API_Parameter.xlsx", 0);
-		Excel_write.excelWrite_overwrite(api_DB_url,row , 1, "API_Parameter.xlsx", 0);
-		
+
+		Excel_write.excelWrite_overwrite(Instances[i], row, 0, "API_Parameter.xlsx", 0);
+		Excel_write.excelWrite_overwrite(api_DB_url, row, 1, "API_Parameter.xlsx", 0);
+
 		post(api_DB_url, "{\"key\":\"" + Key
 				+ "\",\"packet_identifier\": \"historical_data\",\"message_id\": 1234567890,\"MN\":[\"Automation_Device2\"],\"limit\": 1,"
-				+ "\"start_date_time\":\"" + Start_date_Time + "\",\"end_date_time\":\"" + End_date_time + "\"}",row);
+				+ "\"start_date_time\":\"" + Start_date_Time + "\",\"end_date_time\":\"" + End_date_time + "\"}", row);
 	}
 
 	// Request for In-memory Login
-	public static void Postman_Api_Inmem_login(int i,int row) throws Exception {
-		String api_Inmem_url = config_read.read_configvalue("Api_Url" + i);		
+	public static void Postman_Api_Inmem_login(int i, int row) throws Exception {
+		String api_Inmem_url = config_read.read_configvalue("Api_Url" + i);
 		String username = config_read.read_configvalue("username" + i);
 		String password = config_read.read_configvalue("password" + i);
 		post(api_Inmem_url, "{\"request_type\":\"login_request\",\"username\":\"" + username + "\",\"password\":\""
-				+ password + "\",\"MI\":1234567890}",row);
+				+ password + "\",\"MI\":1234567890}", row);
 	}
 
 	// Request for In-memory parameter Data
-	public static void Postman_Api_Inmem_read_Parameter_Collection(int i,int row) throws Exception {
+	public static void Postman_Api_Inmem_read_Parameter_Collection(int i, int row) throws Exception {
 		String api_Inmem_url = config_read.read_configvalue("Api_Url" + i);
-		
-		Excel_write.excelWrite_overwrite(Instances[i],row , 0, "API_Parameter.xlsx", 0);
-		Excel_write.excelWrite_overwrite(api_Inmem_url,row , 1, "API_Parameter.xlsx", 0);
-		
+
+		Excel_write.excelWrite_overwrite(Instances[i], row, 0, "API_Parameter.xlsx", 0);
+		Excel_write.excelWrite_overwrite(api_Inmem_url, row, 1, "API_Parameter.xlsx", 0);
+
 		String Key = config_read.read_configvalue("key" + i);
 
 		post(api_Inmem_url, "{\"key\":\"" + Key
-				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"Automation_Device2\",\"limit\": 1,\"query\": {}}",row);
+				+ "\",\"request_type\": \"read_collection\",\"collection_name\": \"Automation_Device2\",\"limit\": 1,\"query\": {}}",
+				row);
 	}
 
-	public static String post(String url, String json,int row) throws Exception {
+	public static String post(String url, String json, int row) throws Exception {
 		// connection for postman
 		String charset = "UTF-8";
 		System.out.println("URL:" + url);
@@ -95,9 +96,9 @@ public class API_Parameter_request {
 		// Sending json format
 		try (OutputStream output = connection.getOutputStream()) {
 			output.write(json.getBytes(charset));
-			 System.out.println("Last Row no: "+output);
+			System.out.println("Last Row no: " + output);
 
-			 Excel_write.excelWrite_overwrite(json, row, 2, "API_Parameter.xlsx", 0);
+			Excel_write.excelWrite_overwrite(json, row, 2, "API_Parameter.xlsx", 0);
 		}
 
 		// Reading request response
@@ -108,12 +109,12 @@ public class API_Parameter_request {
 				response.append(responseLine.trim());
 			}
 			String repsponse_data = response.toString();
-			 Excel_write.excelWrite_overwrite(repsponse_data, row, 3, "API_Parameter.xlsx", 0);
-		
+			Excel_write.excelWrite_overwrite(repsponse_data, row, 3, "API_Parameter.xlsx", 0);
+
 			// string split using comma
 
 			String[] Formatted_response = response.toString().split(",");
-			System.out.println("Api Request Response :"+Formatted_response);
+			System.out.println("Api Request Response :" + Formatted_response);
 			for (String string : Formatted_response) {
 				System.out.println(string);
 				if (string.contains("DT")) {
@@ -124,9 +125,9 @@ public class API_Parameter_request {
 				}
 			}
 		} catch (Exception e) {
-			Excel_write.excelWrite_overwrite("FAIL",row , 5, "API_Parameter.xlsx", 0);
-			Telegram_Connect.Telegram_request("API Request is not working in"+url);
-			System.out.println("e"+e);
+			Excel_write.excelWrite_overwrite("FAIL", row, 5, "API_Parameter.xlsx", 0);
+			Telegram_Connect.Telegram_request("API Request is not working in" + url);
+			System.out.println("e" + e);
 			return "false";
 		}
 		return DT_DB;
@@ -174,21 +175,22 @@ public class API_Parameter_request {
 		long diffInMinutes = TimeUnit.MILLISECONDS.toMinutes(diff);
 		long diffInSeconds = TimeUnit.MILLISECONDS.toSeconds(diff);
 
-		if (diffInDays == 0 && diffInHours > 2) {
+		if (diffInDays > 0) {
+			System.out.println("Diifference In Days : " + diffInDays);
+			diffInMinutes = diffInDays * 1440;
+			return diffInMinutes;
+		} else if (diffInDays == 0 && diffInHours > 2) {
 			System.out.println("Difference In Hours : " + diffInHours);
+			diffInMinutes = diffInHours * 60;
 			// System.out.println("Difference In Minutes : " + diffInMinutes);
-			return diffInHours;
+			return diffInMinutes;
 		} else if (diffInHours < 2 && diffInMinutes >= 0) {
-			// diffInMinutes = diffInMinutes / 60;
 			System.out.println("Difference In Minutes : " + diffInMinutes);
 			return diffInMinutes;
-		} else if (diffInMinutes == 0) {
-			// diffInSeconds = diffInSeconds / 60;
-			System.out.println("Diifernce In Seconds : " + diffInSeconds);
-			return diffInSeconds;
 		} else {
-			System.out.println("Diifference In Days : " + diffInDays);
-			return diffInDays;
+			diffInMinutes = diffInSeconds / 60;
+			System.out.println("Diifernce In Seconds : " + diffInSeconds);
+			return diffInMinutes;
 		}
 	}
 
