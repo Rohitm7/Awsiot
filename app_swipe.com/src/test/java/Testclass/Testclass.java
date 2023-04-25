@@ -101,7 +101,7 @@ public class Testclass {
 		Thread.sleep(1500);
 
 		// Parameter_4 Text
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[5]")).sendKeys("R_Text_02");
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).sendKeys("R_Text_02");
 
 	}
 
