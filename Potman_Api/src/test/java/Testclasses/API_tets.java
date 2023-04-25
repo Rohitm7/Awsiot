@@ -38,6 +38,7 @@ public class API_tets {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception in E2E DB Request :" + e);
+			Telegram_Connect.Telegram_request("API DB Request is not working in E2E .");
 			Assert.assertEquals(true, false);
 		}
 	}
@@ -71,6 +72,8 @@ public class API_tets {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception in E2E In-Memory Request :" + e);
+			Telegram_Connect.Telegram_request("API DB Request is not working in E2E .");
+
 			Assert.assertEquals(true, false);
 		}
 
@@ -139,6 +142,7 @@ public class API_tets {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Exception in WWW In-Memory Request :" + e);
+			Telegram_Connect.Telegram_request("API DB Request is not working in E2E .");
 			Assert.assertEquals(true, false);
 
 		}

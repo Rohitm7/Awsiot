@@ -6,8 +6,6 @@
       <class name="Testclasses.API_tets">
         <methods>
           <include name="E2E_DB"/>
-          <include name="E2E_Inmemory"/>
-          <include name="WWW_Inmemory"/>
         </methods>
       </class> <!-- Testclasses.API_tets -->
     </classes>
