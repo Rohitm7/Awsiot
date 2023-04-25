@@ -146,16 +146,18 @@ public class Inmemory_request {
 			return diffInDays;
 		} else if (diffInDays == 0 && diffInHours > 2) {
 			System.out.println("Difference In Hours : " + diffInHours);
+			diffInDays = diffInHours / 24;
 			// System.out.println("Difference In Minutes : " + diffInMinutes);
-			return diffInHours;
+			return diffInDays;
 		} else if (diffInHours < 2 && diffInMinutes >= 0) {
 			// diffInMinutes = diffInMinutes / 60;
+			diffInDays = diffInMinutes / 1440;
 			System.out.println("Difference In Minutes : " + diffInMinutes);
-			return diffInMinutes;
+			return diffInDays;
 		} else {
-			// diffInSeconds = diffInSeconds / 60;
+			diffInDays = diffInMinutes / 86400;
 			System.out.println("Diifernce In Seconds : " + diffInSeconds);
-			return diffInSeconds;
+			return diffInDays;
 		}
 	}
 }

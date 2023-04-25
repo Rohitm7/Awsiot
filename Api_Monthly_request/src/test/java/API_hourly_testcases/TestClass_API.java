@@ -17,7 +17,7 @@ public class TestClass_API {
 		Inmemory_request.Postman_Api_Inmem_read_Sche_Month_Collection(0);
 
 		String DT = Inmemory_request.DT;
-		System.out.println("DT from Hourly Packet :" + DT);
+		System.out.println("DT from Monthly Packet :" + DT);
 
 		long diff = Inmemory_request.Calculate_Difference(DT);
 		String Diff = String.valueOf(diff);
@@ -41,7 +41,7 @@ public class TestClass_API {
 		Inmemory_request.Postman_Api_Inmem_read_Sche_Month_Collection(1);
 
 		String DT = Inmemory_request.DT;
-		System.out.println("DT from Hourly Packet :" + DT);
+		System.out.println("DT from Monthly Packet :" + DT);
 
 		long diff = Inmemory_request.Calculate_Difference(DT);
 		String Diff = String.valueOf(diff);
