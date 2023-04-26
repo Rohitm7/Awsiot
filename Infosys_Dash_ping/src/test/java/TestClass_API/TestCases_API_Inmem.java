@@ -31,52 +31,51 @@ public class TestCases_API_Inmem extends WebdriverManager_Setup {
 	}
 
 	@Test
-	public void Infosys_Ping() throws IOException, InterruptedException   {
+	public void Infosys_Ping() throws IOException, InterruptedException {
 		try {
-		String Infosys_Url = config_read.read_configvalue("Infosys_Dash_Url");
-		// launching url
-		System.out.println("Url :" + Infosys_Url);
-		driver.get(Infosys_Url);
+			String Infosys_Url = config_read.read_configvalue("Infosys_Dash_Url");
+			// launching url
+			System.out.println("Url :" + Infosys_Url);
+			driver.get(Infosys_Url);
 
-		// waiting for 10 seconds to load dashboard...(Worst scenario we have to waitfor
-		// 10 sec)
+			// waiting for 10 seconds to load dashboard...(Worst scenario we have to waitfor
+			// 10 sec)
 
-		Thread.sleep(10000);
-		//Telegram_Connect.Telegram_request("PH Values :");
-		String[] Parameter = new String[] { "STP Inlet", "STP Outlet", "Lake water" };
+			Thread.sleep(10000);
+			// Telegram_Connect.Telegram_request("PH Values :");
+			String[] Parameter = new String[] { "STP Inlet", "STP Outlet", "Lake water" };
 
-		for (int i = 2; i < 5; i++) {
-			// Using For loop reading Ph values without PH unit
-			String PH_values = driver.findElement(By.xpath("//table/tbody/tr[2]/th[" + i + "]")).getText();
-			
-			//PH_values = PH_values.substring(0, 3);
-			
-			PH_values = PH_values.replace("pH", " ");
+			for (int i = 2; i < 5; i++) {
+				// Using For loop reading Ph values without PH unit
+				String PH_values = driver.findElement(By.xpath("//table/tbody/tr[2]/th[" + i + "]")).getText();
 
-			// Converting Ph values string to Integer
-			//Telegram_Connect.Telegram_request(Parameter[i - 2] + " : " + PH_values);
+				// PH_values = PH_values.substring(0, 3);
 
-			float Ph_val = Float.valueOf(PH_values);
-			Ph_values_arr[i - 2] = Ph_val;
-			// System.out.println("PH Row Values after wait :" + PH_values);
-		}
+				PH_values = PH_values.replace("pH", " ");
 
-		for (int i = 0; i < Ph_values_arr.length; i++) {
-			if (Ph_values_arr[i] > 6.5 && Ph_values_arr[i] < 8.5) {
-				System.out.println("PH Row Values from array  :" + Ph_values_arr[i]);
-				//Telegram_Connect.Telegram_request("PH Values are within the range...!");
-				Assert.assertEquals(true, true);
-			} else {
-				Telegram_Connect.Telegram_request("PH Values are not within the range...!");
+				// Converting Ph values string to Integer
+				// Telegram_Connect.Telegram_request(Parameter[i - 2] + " : " + PH_values);
 
-				Assert.assertEquals(true, false);
+				float Ph_val = Float.valueOf(PH_values);
+				Ph_values_arr[i - 2] = Ph_val;
+				// System.out.println("PH Row Values after wait :" + PH_values);
 			}
-		}
-		}catch (Exception e) {
+
+			for (int i = 0; i < Ph_values_arr.length; i++) {
+				if (Ph_values_arr[i] > 6.5 && Ph_values_arr[i] < 8.5) {
+					System.out.println("PH Row Values from array  :" + Ph_values_arr[i]);
+					// Telegram_Connect.Telegram_request("PH Values are within the range...!");
+					Assert.assertEquals(true, true);
+				} else {
+					Telegram_Connect.Telegram_request("PH Values are not within the range...!");
+					Assert.assertEquals(true, false);
+				}
+			}
+		} catch (Exception e) {
+			Assert.assertEquals(true, false);
 			Telegram_Connect.Telegram_request("PH Values are not within the range or dashboard is not loading...!");
 		}
-	
+
 	}
-	
 
 }
