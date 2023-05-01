@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-19T11:39:52 IST" name="Default suite" finished-at="2023-04-19T11:39:54 IST" duration-ms="1711">
+  <suite started-at="2023-05-01T13:46:33 IST" name="Default suite" finished-at="2023-05-01T13:46:34 IST" duration-ms="1366">
     <groups>
     </groups>
-    <test started-at="2023-04-19T11:39:52 IST" name="Default test" finished-at="2023-04-19T11:39:54 IST" duration-ms="1711">
+    <test started-at="2023-05-01T13:46:33 IST" name="Default test" finished-at="2023-05-01T13:46:34 IST" duration-ms="1366">
       <class name="Testclass.Testclass">
-        <test-method signature="testcases()[pri:0, instance:Testclass.Testclass@576d5deb]" started-at="2023-04-19T11:39:52 IST" name="testcases" finished-at="2023-04-19T11:39:54 IST" duration-ms="1623" status="FAIL">
+        <test-method signature="testcases()[pri:0, instance:Testclass.Testclass@2e3967ea]" started-at="2023-05-01T13:46:33 IST" name="testcases" finished-at="2023-05-01T13:46:34 IST" duration-ms="1280" status="FAIL">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Rohits-MacBook-Air.local', ip: 'fe80:0:0:0:18d4:f6a1:117b:3a8e%en0']]>
+Host info: host: 'Rohits-MacBook-Air.local', ip: 'fe80:0:0:0:1c50:7cb7:4233:bb41%en0']]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Rohits-MacBook-Air.local', ip: 'fe80:0:0:0:18d4:f6a1:117b:3a8e%en0'
+Host info: host: 'Rohits-MacBook-Air.local', ip: 'fe80:0:0:0:1c50:7cb7:4233:bb41%en0'
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:80)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:92)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:117)
-at Testclass.Testclass.testcases(Testclass.java:22)
+at Testclass.Testclass.testcases(Testclass.java:36)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -24,13 +24,10 @@ public class Testclass {
 	@Test
 	public void testcases() throws Exception {
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability("deviceName", "Samsung Testing Phone");
+		cap.setCapability("deviceName", "Testing Phone");
 		cap.setCapability("udid", "10.0.1.130:5555");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "13");
-
-		// cap.setCapability("appPackage", "com.sec.android.gallery3d");
-		// cap.setCapability("appActivity","com.samsung.android.gallary.app.activity.GalleryActivity");
 
 		cap.setCapability("appPackage", "io.ionic.starter.untangled_ams_task");
 		cap.setCapability("appActivity", "io.ionic.starter.untangled_ams_task.MainActivity");
@@ -58,8 +55,7 @@ public class Testclass {
 
 		// Form Type = Test_Parameter30ID
 		// Id Webelement
-		driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText"))
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText"))
 				.sendKeys("Test_R_ID_01");
 
 		// Description
@@ -75,14 +71,11 @@ public class Testclass {
 
 		driver.pressKey(keyEvent2);
 		Thread.sleep(500);
-		// Press "7" key
+		//Press "7" key
 		KeyEvent keyEvent7 = new KeyEvent().withKey(AndroidKey.DIGIT_7);
 		driver.pressKey(keyEvent7);
 		driver.navigate().back();
 		Thread.sleep(500);
-
-		String PageSource = driver.getPageSource();
-		System.out.println("PageSource Before Scroll : " + PageSource);
 
 		// Using 500,1500 pointer will go touch to the middle of the page.
 		Point startPoint = new Point(500, 1500);
@@ -94,25 +87,20 @@ public class Testclass {
 		// Create a new Sequence object
 		Sequence swipe = new Sequence(finger, 2);
 		// Add a pointer move action to the starting point
-		swipe.addAction(
-				finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
 		// Add a pointer down action to simulate touching the screen
 		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
 		// Add a pointer move action to the ending point
-		swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endPoint.x,
-				endPoint.y));
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endPoint.x, endPoint.y));
 		// Add a pointer up action to simulate releasing the screen
 		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 		// Perform the swipe gesture
 		driver.perform(Arrays.asList(swipe));
 		Thread.sleep(1500);
 
-		String PageSource_1 = driver.getPageSource();
-		System.out.println("PageSource After Scroll : " + PageSource);
 
 		// Parameter_4 Text
-		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[7]")).click();
-
+		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).click();
 	}
 
 }
