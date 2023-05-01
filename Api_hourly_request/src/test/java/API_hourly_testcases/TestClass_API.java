@@ -20,8 +20,8 @@ public class TestClass_API {
 		// System.out.println("DT from Hourly Packet :" + DT);
 
 		long diff = Inmemory_request.Calculate_Difference(DT);
-		String Diff = String.valueOf(diff);
-		System.out.println("Difference Between current DT and Packet DT is :" + Diff);
+		String Difference = String.valueOf(diff);
+		System.out.println("Difference Between current DT and Packet DT is :" + Difference);
 
 		if (diff < 36) {
 			System.out.println("Last Schedule hour data generated on : " + diff);
@@ -29,7 +29,7 @@ public class TestClass_API {
 			Assert.assertEquals(true, true);
 		} else {
 			System.out.println("Last Schedule hour data generated on : " + diff);
-			Telegram_Connect.Telegram_request("API In_Memory Schedule Hour Request  is not working in E2E .");
+			Telegram_Connect.Telegram_request("Testclass : API In_Memory Schedule Hour Request is not working in E2E.");
 			Assert.assertEquals(true, false);
 		}
 	}
@@ -40,19 +40,19 @@ public class TestClass_API {
 		Inmemory_request.Postman_Api_Inmem_read_Sche_hour_Collection(1);
 
 		String DT = Inmemory_request.DT;
-		// System.out.println("DT from Hourly Packet :" + DT);
+		//System.out.println("DT from Hourly Packet :" + DT);
 
 		long diff = Inmemory_request.Calculate_Difference(DT);
-		String Diff = String.valueOf(diff);
-		System.out.println("Difference Between current DT and Packet DT is :" + Diff);
+		String Difference = String.valueOf(diff);
+		System.out.println("Difference Between current DT and Packet DT is :" + Difference);
 
 		if (diff < 36) {
 			System.out.println("Last Schedule hour data generated on : " + diff);
-			//Telegram_Connect.Telegram_request("API In-Memory Schedule Hour Request is working in www .");
+			//Telegram_Connect.Telegram_request("API In-Memory Schedule Hour Request is working in www.");
 			Assert.assertEquals(true, true);
 		} else {
 			System.out.println("Last Schedule hour data generated on : " + diff);
-			Telegram_Connect.Telegram_request("API In_Memory Schedule Hour Request  is not working in www .");
+			Telegram_Connect.Telegram_request("Testclass : API In_Memory Schedule Hour Request is not working in www.");
 			Assert.assertEquals(true, false);
 		}
 	}

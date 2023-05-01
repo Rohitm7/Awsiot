@@ -70,7 +70,6 @@ public class Inmemory_request {
 			while ((responseLine = br.readLine()) != null) {
 				response.append(responseLine.trim());
 			}
-
 			// String repsponse_data = response.toString();
 			String repsponse_data = String.valueOf(response);
 			// System.out.println(repsponse_data.length());
@@ -102,7 +101,6 @@ public class Inmemory_request {
 			System.out.println("e" + e);
 			Telegram_Connect.Telegram_request("API Hourly Request is not working for :" + url);
 			return "false";
-
 		}
 		return DT;
 	}
