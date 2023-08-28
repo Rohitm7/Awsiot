@@ -19,7 +19,6 @@ import org.apache.commons.lang.StringUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import com.google.gson.Gson;
 import Config_Utility.config_read;
 import Telegram_Send_Msg.Telegram_Connect;
 

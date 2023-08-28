@@ -3,20 +3,15 @@ package Testclass;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
 
 public class Testclass {
 	static AndroidDriver driver;
@@ -35,26 +30,24 @@ public class Testclass {
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AndroidDriver(url, cap);
 		System.out.println("Application Launched");
-
 		Thread.sleep(2000);
-
+		
 		driver.findElement(By.xpath("(//*[@index='0'])[21]")).sendKeys("ams_automation");
 		driver.findElement(By.xpath("(//*[@index='0'])[25]")).sendKeys("Ams_automati0n");
 		driver.findElement(By.xpath("//android.widget.Button[@text='SIGN IN']")).click();
-
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("(//android.view.View[@index='4'])[2]")).click();
-
 		Thread.sleep(2000);
+		
 		driver.findElement(By.xpath("//android.widget.Button[@text='SCAN']")).click();
 		Thread.sleep(1500);
 
 		driver.findElement(By.xpath("//android.widget.Button[@text='While using the app']")).click();
 		Thread.sleep(5000);
 
-		// Form Type = Test_Parameter30ID
-		// Id Webelement
+		//Form Type = Test_Parameter30ID
+		//Id Webelement
 		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText"))
 				.sendKeys("Test_R_ID_01");
 
@@ -68,13 +61,14 @@ public class Testclass {
 		Thread.sleep(1000);
 
 		KeyEvent keyEvent2 = new KeyEvent().withKey(AndroidKey.DIGIT_2);
-
 		driver.pressKey(keyEvent2);
 		Thread.sleep(500);
+		
 		//Press "7" key
 		KeyEvent keyEvent7 = new KeyEvent().withKey(AndroidKey.DIGIT_7);
 		driver.pressKey(keyEvent7);
 		driver.navigate().back();
+		
 		Thread.sleep(500);
 
 		// Using 500,1500 pointer will go touch to the middle of the page.
@@ -84,22 +78,21 @@ public class Testclass {
 		Point endPoint = new Point(100, 1000);
 		// Create a new PointerInput object
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-		// Create a new Sequence object
+		//Create a new Sequence object
 		Sequence swipe = new Sequence(finger, 2);
-		// Add a pointer move action to the starting point
+		//Add a pointer move action to the starting point
 		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startPoint.x, startPoint.y));
-		// Add a pointer down action to simulate touching the screen
+		//Add a pointer down action to simulate touching the screen
 		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-		// Add a pointer move action to the ending point
+		//Add a pointer move action to the ending point
 		swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endPoint.x, endPoint.y));
-		// Add a pointer up action to simulate releasing the screen
+		//Add a pointer up action to simulate releasing the screen
 		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-		// Perform the swipe gesture
+		//Perform the swipe gesture
 		driver.perform(Arrays.asList(swipe));
 		Thread.sleep(1500);
 
-
-		// Parameter_4 Text
+		//Parameter_4 Text
 		driver.findElement(By.xpath("(//android.widget.EditText[@index='0'])[6]")).click();
 	}
 
